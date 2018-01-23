@@ -9,27 +9,21 @@ client = MongoClient('mongodb://root:root@ds211558.mlab.com:11558/air_data')
 db=client.get_database('air_data')
 @app.route('/')
 def hello_world():
-    db.air_datas.insert_one({"name":"tamim","id":"201702080"})
-    collection = db['air_datas']
-    cursor = collection.find({})
-    for document in cursor:
-        print(document)
-        print('\n')
-    return 'Hello Tamim!!! How are Boy!!!'
+   return 'Hello World'
 
-@app.route('/sensor/<name>/<age>',methods = ['POST', 'GET'])
-def sensor(name=None,age=None):
-   if request.method == 'POST':
-      print (request.is_json)
-      print("hello\n")
-      content = request.json
-    #   db.value.insert_one(content)
-      print (content)
-      
-      return "done"
-   else:
 
-      return "done " +name+" "+age
+@app.route('/val/<co>/<dust>',methods = ['GET'])
+def val(co=None,dust=None):
+	print(co+" "+dust)	
+	db.air_datas.insert_one({'co': co,'dust':dust})
+	return co+" "+dust
+	
+@app.route('/<area>',methods = ['GET'])
+def val(area=None):
+	print(area)	
+	#db.air_datas.insert_one({'co': co,'dust':dust})
+	
+	return "{'co':'211','du':'211'}"
 
 if __name__ == '__main__':
    app.run(debug=True)
