@@ -16,7 +16,7 @@ def hello_world():
    return 'Hello World'
 
 @app.route('/val/<co>/<dust>',methods = ['GET'])
-   def val(co=None,dust=None):
+def val(co=None,dust=None):
    time_date=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
    print(co+" "+dust+" "+time_date)	
    db.air_datas.insert_one({'co': co,'dust':dust,'time_date':time_date})
