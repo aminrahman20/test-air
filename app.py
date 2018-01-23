@@ -5,12 +5,12 @@ from pymongo import MongoClient
 app = Flask(__name__)
 #test
 
-client = MongoClient('mongodb://tamim_tm:Tamuorin1@ds111618.mlab.com:11618/test_tamim')
-db=client.get_database('test_tamim')
+client = MongoClient('mongodb://root:root@ds211558.mlab.com:11558/air_data')
+db=client.get_database('air_data')
 @app.route('/')
 def hello_world():
     db.test.insert_one({"name":"tamim","id":"201702080"})
-    collection = db['test']
+    collection = db['air_datas']
     cursor = collection.find({})
     for document in cursor:
         print(document)
