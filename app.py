@@ -12,18 +12,5 @@ def hello_world():
    return 'Hello World'
 
 
-@app.route('/val/<co>/<dust>',methods = ['GET'])
-def val(co=None,dust=None):
-   print(co+" "+dust)	
-   db.air_datas.insert_one({'co': co,'dust':dust})
-   return co+" "+dust
-	
-@app.route('/<area>',methods = ['GET'])
-def val(area=None):
-   print(area)	
-   #db.air_datas.insert_one({'co': co,'dust':dust})
-	
-   return "{'co':'211','du':'211'}"
-
 if __name__ == '__main__':
    app.run(debug=True)
