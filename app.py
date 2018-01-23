@@ -18,9 +18,9 @@ def hello_world():
 @app.route('/val/<co>/<dust>',methods = ['GET'])
 def val(co=None,dust=None):
    time_date=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-   print(co+" "+dust+" "+time_date)	
-   db.air_datas.insert_one({'co': co,'dust':dust,'time_date':time_date})
-   return co+" "+dust+" "+time_date
+   print(time_date+" "+co+" "+dust)	
+   db.air_datas.insert_one({'time_date':time_date,'co': co,'dust':dust})
+   return time_date+" "+co+" "+dust
 
 if __name__ == '__main__':
    app.run(debug=True)
