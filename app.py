@@ -21,11 +21,6 @@ def hello_world():
    print(co+" "+dust+" "+time_date)	
    db.air_datas.insert_one({'co': co,'dust':dust,'time_date':time_date})
    return co+" "+dust+" "+time_date
-@app.route('/<area>',methods = ['GET'])
-def val(area=None):
-   print(area)	
-	#db.air_datas.insert_one({'co': co,'dust':dust})
-	
-	return "{'co':'211','du':'211'}"
+
 if __name__ == '__main__':
    app.run(debug=True)
