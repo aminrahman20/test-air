@@ -17,9 +17,10 @@ def hello_world():
 @app.route('/time',methods = ['GET'])
 def time():
    x=datetime.datetime.now()
+   y=datetime.datetime.now() - datetime.timedelta(minutes=20)
    
-   print(x)
-   return x
+   
+   return 'hello time'
    
 @app.route('/val/<co>/<dust>',methods = ['GET'])
 def val(co=None,dust=None):
