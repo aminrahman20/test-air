@@ -19,7 +19,7 @@ def time():
    x=datetime.datetime.now()
    
    
-   return x
+   return 'hello time'
    
 @app.route('/val/<co>/<dust>',methods = ['GET'])
 def val(co=None,dust=None):
