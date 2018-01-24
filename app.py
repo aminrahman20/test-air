@@ -14,15 +14,16 @@ db=client.get_database('air_data')
 @app.route('/')
 def hello_world():
    return 'Hello World'
-
+id=0
 @app.route('/val/<co>/<dust>',methods = ['GET'])
 def val(co=None,dust=None):
    
-   id=0
+   
+   id = (id+1)
    time_date=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-   print(id+" "+time_date+" "+co+" "+dust)	
-   db.air_datas.insert_one({'id':id+=1,'time_date':time_date,'co': co,'dust':dust})
-   return id+" "+time_date+" "+co+" "+dust
+   print(ID+" "+time_date+" "+co+" "+dust)	
+   db.air_datas.insert_one({'ID':id,'time_date':time_date,'co': co,'dust':dust})
+   return ID+" "+time_date+" "+co+" "+dust
 
 if __name__ == '__main__':
    app.run(debug=True)
