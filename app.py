@@ -18,8 +18,8 @@ def hello_world():
 def time():
    x=datetime.datetime.now()
    
-   
-   return 'hello time'
+   print(x)
+   return x
    
 @app.route('/val/<co>/<dust>',methods = ['GET'])
 def val(co=None,dust=None):
