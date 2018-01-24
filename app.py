@@ -3,7 +3,7 @@ from flask import Flask
 from flask import request
 from pymongo import MongoClient
 from datetime import datetime
-
+import datetime
 app = Flask(__name__)
 
 #test
@@ -14,7 +14,18 @@ db=client.get_database('air_data')
 @app.route('/')
 def hello_world():
    return 'Hello World'
-
+@app.route('/a',methods = ['GET'])
+def a():
+   x=datetime.datetime.now()
+   y=datetime.datetime.now() - datetime.timedelta(days=1)
+   db.air_datas.find({
+      time_date: {
+            $gte:y,
+            $lt: x
+           }
+      })
+   return 'Hello time'
+   
 @app.route('/val/<co>/<dust>',methods = ['GET'])
 def val(co=None,dust=None):
    
