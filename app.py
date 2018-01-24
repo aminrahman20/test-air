@@ -17,7 +17,7 @@ def hello_world():
 @app.route('/time',methods = ['GET'])
 def time():
    x=datetime.datetime.now()
-   y=datetime.datetime.now() - datetime.timedelta(minutes=20)
+   
    
    return x
    
