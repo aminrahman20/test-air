@@ -18,12 +18,7 @@ def hello_world():
 def a():
    x=datetime.datetime.now()
    y=datetime.datetime.now() - datetime.timedelta(days=1)
-   db.air_datas.find({
-      time_date: {
-            $gte:y,
-            $lt: x
-           }
-      })
+   db.air_datas.find({time_date: {$gte:y,$lt: x}})
    return 'Hello time'
    
 @app.route('/val/<co>/<dust>',methods = ['GET'])
