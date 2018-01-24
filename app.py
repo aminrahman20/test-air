@@ -20,7 +20,7 @@ def val(co=None,dust=None):
    global id 
    id = (id+1)
    time_date=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-   print(id+" "+time_date+" "+co+" "+dust)	
+   print(str(id)+" "+time_date+" "+co+" "+dust)	
    db.air_datas.insert_one({'ID':id,'time_date':time_date,'co': co,'dust':dust})
    return id+" "+time_date+" "+co+" "+dust
 
