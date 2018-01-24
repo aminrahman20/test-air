@@ -21,7 +21,7 @@ def val(co=None,dust=None):
    id=0
    time_date=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
    print(id+" "+time_date+" "+co+" "+dust)	
-   db.air_datas.insert_one({'id':id+=1'time_date':time_date,'co': co,'dust':dust})
+   db.air_datas.insert_one({'id':id+=1,'time_date':time_date,'co': co,'dust':dust})
    return id+" "+time_date+" "+co+" "+dust
 
 if __name__ == '__main__':
