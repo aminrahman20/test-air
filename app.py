@@ -18,11 +18,11 @@ def hello_world():
 @app.route('/val/<co>/<dust>',methods = ['GET'])
 def val(co=None,dust=None):
    
-   
+   id=0
    time_date=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-   print(time_date+" "+co+" "+dust)	
-   db.air_datas.insert_one({'time_date':time_date,'co': co,'dust':dust})
-   return time_date+" "+co+" "+dust
+   print(id+" "+time_date+" "+co+" "+dust)	
+   db.air_datas.insert_one({'id':id+=1'time_date':time_date,'co': co,'dust':dust})
+   return id+" "+time_date+" "+co+" "+dust
 
 if __name__ == '__main__':
    app.run(debug=True)
