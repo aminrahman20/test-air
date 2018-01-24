@@ -19,7 +19,7 @@ def time():
    x=datetime.datetime.now()
    y=datetime.datetime.now() - datetime.timedelta(minutes=20)
    
-   return 'Hello time difference'+ " "+x+" "+y
+   return x
    
 @app.route('/val/<co>/<dust>',methods = ['GET'])
 def val(co=None,dust=None):
