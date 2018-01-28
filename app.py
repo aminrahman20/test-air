@@ -20,7 +20,7 @@ def time():
    #y=datetime.datetime.now() - datetime.timedelta(minutes=20)
    #db.air_datas.find({time_date: {$gte:y,$lt: x}})
    
-   return "{'co':'123','du':'432'}"
+   return "amin"
    
 @app.route('/val/<co>/<dust>',methods = ['GET'])
 def val(co=None,dust=None):
