@@ -30,8 +30,8 @@ def val(co=None,dust=None):
    time_date=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
    print(time_date+" "+co+" "+dust)	
    db.air_datas.insert_one({'time_date':time_date,'co': co,'dust':dust})
-   a = db.air_datas.find_one()
-   return a
+  
+   return db.air_datas.find_one()
 #time_date+" "+co+" "+dust
 
 if __name__ == '__main__':
