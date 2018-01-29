@@ -13,4 +13,11 @@ app.config['MONGO_URI'] = 'mongodb://root:root@ds211558.mlab.com:11558/air_data'
 
 #print(air_date)
 #client = MongoClient('mongodb://root:root@ds211558.mlab.com:11558/air_data')
-db=pymongo(app)
+db=PyMongo(app)
+@app.route('/home')
+def hello_world():
+   return 'Hello World'
+  
+  
+if __name__ == '__main__':
+   app.run(debug=True)
