@@ -21,18 +21,10 @@ def time():
    #x=datetime.datetime.now()
    #y=datetime.datetime.now() - datetime.timedelta(minutes=20)
    #db.air_datas.find({time_date: {$gte:y,$lt: x}})
-   results = db.air_datas.find()
+   
  
    
-   print('+-+-+-+-+-+-+-+-+-+-+-+-+-+-')
- 
-   # display documents from collection
-   for record in results:
-   # print out the document
-   print(record['co'])
- 
-   
-   #return "amin"
+   return "amin"
    
 @app.route('/val/<co>/<dust>',methods = ['GET'])
 def val(co=None,dust=None):
