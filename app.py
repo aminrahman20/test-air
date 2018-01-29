@@ -13,10 +13,12 @@ app.config['MONGO_URI'] = 'mongodb://root:root@ds211558.mlab.com:11558/air_data'
 
 #print(air_date)
 #client = MongoClient('mongodb://root:root@ds211558.mlab.com:11558/air_data')
-db=PyMongo(app)
-@app.route('/home')
-def hello_world():
-   return 'Hello World'
+mongo=PyMongo(app)
+@app.route('/add')
+def add():
+    user = mongo.db.users
+    user.insert({'name':'Amin'})
+    return 'Added User!'
   
   
 if __name__ == '__main__':
