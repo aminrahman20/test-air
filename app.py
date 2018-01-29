@@ -1,9 +1,9 @@
 #import os
 from flask import Flask
 from pymongo import PyMongo
-from flask import request
+#from flask import request
 #from pymongo import MongoClient
-from datetime import datetime
+#from datetime import datetime
 #import datetime
 app = Flask(__name__)
 app.config['MONGO_DBNAME'] = 'air_data'
@@ -17,7 +17,7 @@ mongo=PyMongo(app)
 @app.route('/add')
 def add():
     user = mongo.db.users
-    user.insert({'name':'Amin'})
+    user.insert({'name' : 'Amin'})
     return 'Added User!'
   
   
