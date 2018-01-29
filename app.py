@@ -23,15 +23,15 @@ def time():
    #db.air_datas.find({time_date: {$gte:y,$lt: x}})
    results = db.air_datas.find()
  
-   print()
+   
    print('+-+-+-+-+-+-+-+-+-+-+-+-+-+-')
  
-# display documents from collection
+   # display documents from collection
    for record in results:
-# print out the document
-   print(record['co'] + ',',record['dust])
+   # print out the document
+   print(record['co'])
  
-   print()
+   
    #return "amin"
    
 @app.route('/val/<co>/<dust>',methods = ['GET'])
@@ -42,7 +42,7 @@ def val(co=None,dust=None):
    db.air_datas.insert_one({'time_date':time_date,'co': co,'dust':dust})
   
    return time_date+" "+co+" "+dust
-#
+   
 
 if __name__ == '__main__':
    app.run(debug=True)
