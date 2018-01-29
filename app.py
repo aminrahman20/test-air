@@ -22,7 +22,7 @@ def time():
    #y=datetime.datetime.now() - datetime.timedelta(minutes=20)
    #db.air_datas.find({time_date: {$gte:y,$lt: x}})
    
-   return db.air_datas.find_one()
+   return "amin"
    
 @app.route('/val/<co>/<dust>',methods = ['GET'])
 def val(co=None,dust=None):
@@ -30,7 +30,9 @@ def val(co=None,dust=None):
    time_date=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
    print(time_date+" "+co+" "+dust)	
    db.air_datas.insert_one({'time_date':time_date,'co': co,'dust':dust})
-   return time_date+" "+co+" "+dust
+   a = db.air_datas.find_one()
+   return a
+#time_date+" "+co+" "+dust
 
 if __name__ == '__main__':
    app.run(debug=True)
