@@ -17,12 +17,12 @@ def hello_world():
    return 'Hello World'
 @app.route('/time',methods = ['GET'])
 def time():
-   find = db.air_datas.find_one()
+   
    #x=datetime.datetime.now()
    #y=datetime.datetime.now() - datetime.timedelta(minutes=20)
    #db.air_datas.find({time_date: {$gte:y,$lt: x}})
    
-   return find
+   return db.air_datas.find_one()
    
 @app.route('/val/<co>/<dust>',methods = ['GET'])
 def val(co=None,dust=None):
