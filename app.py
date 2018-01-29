@@ -3,7 +3,7 @@ from flask import Flask
 from flask import request
 from pymongo import MongoClient
 from datetime import datetime
-import datetime
+#import datetime
 app = Flask(__name__)
 
 #test
@@ -19,9 +19,9 @@ def time():
    #x=datetime.datetime.now()
    #y=datetime.datetime.now() - datetime.timedelta(minutes=20)
    #db.air_datas.find({time_date: {$gte:y,$lt: x}})
+   datetime.datetime.now()
    
-   
-   return datetime.datetime.now()
+   #return datetime.datetime.now()
    
 @app.route('/val/<co>/<dust>',methods = ['GET'])
 def val(co=None,dust=None):
