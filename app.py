@@ -19,7 +19,7 @@ def time():
    #x=datetime.datetime.now()
    #y=datetime.datetime.now() - datetime.timedelta(minutes=20)
    #db.air_datas.find({time_date: {$gte:y,$lt: x}})
-   db.air_datas.find().sort({_id:1})
+   
    
    #return datetime.datetime.now()
    
@@ -29,6 +29,7 @@ def val(co=None,dust=None):
    time_date=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
    print(time_date+" "+co+" "+dust)	
    db.air_datas.insert_one({'time_date':time_date,'co': co,'dust':dust})
+   db.air_datas.find()
    return time_date+" "+co+" "+dust
 
 if __name__ == '__main__':
