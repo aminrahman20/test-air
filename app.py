@@ -20,12 +20,12 @@ def time():
     #x=datetime.datetime.now()
     #y=datetime.datetime.now() - datetime.timedelta(minutes=20)
     #db.air_datas.find({time_date: {$gte:y,$lt: x}})
-    results = db.air_datas.find_one()
+    results = db.air_datas.find()
     for record in results:
         print(record['co'])
  
    
-    #return "amin"
+    return (record['co'])
    
 @app.route('/val/<co>/<dust>',methods = ['GET'])
 def val(co=None,dust=None):
