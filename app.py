@@ -20,13 +20,12 @@ def time():
     #x=datetime.datetime.now()
     #y=datetime.datetime.now() - datetime.timedelta(minutes=20)
     #db.air_datas.find({time_date: {$gte:y,$lt: x}})
-    results = db.air_datas.find_one()
-    #.sort({"_id":-1}).limit(1)
-    for record in results:
-        print(record['co'])
+    results = db.air_datas.find().sort({"time_date":-1}).limit(1)
+    #for record in results:
+        #print(record['co'])
  
    
-        return (record['co'])
+    return (record['co'])
     #return "hello"
    
 @app.route('/val/<co>/<dust>',methods = ['GET'])
