@@ -28,15 +28,20 @@ def time():
     return results[0]['co']
     
    
-@app.route('/val/<co>/<dust>',methods = ['GET'])
-def val(co=None,dust=None):
+#@app.route('/val/<co>/<dust>',methods = ['GET'])
+#def val(co=None,dust=None):
    
-    time_date=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    print(time_date+" "+co+" "+dust)	
-    db.air_datas.insert_one({'time_date':time_date,'co': co,'dust':dust})
+    #time_date=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    #print(time_date+" "+co+" "+dust)	
+    #db.air_datas.insert_one({'time_date':time_date,'co': co,'dust':dust})
   
-    return time_date+" "+co+" "+dust
-   
+    #return time_date+" "+co+" "+dust
+@app.route('/val/<co>',methods = ['GET'])
+def val(co=None):
+    time_date=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    print(time_date+" "+co)	
+    db.air_datas.insert_one({'time_date':time_date,'co': co})
+    return time_date+" "+co
 
 if __name__ == '__main__':
     app.run(debug=True)
