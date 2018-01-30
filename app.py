@@ -24,7 +24,7 @@ def time():
     #for record in results:
         #print(record['co'])
     
-    print(results[0])
+    print(results[0]['co'])
     #return results
     return "hello"
    
