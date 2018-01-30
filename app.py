@@ -20,11 +20,11 @@ def time():
     #x=datetime.datetime.now()
     #y=datetime.datetime.now() - datetime.timedelta(minutes=20)
     #db.air_datas.find({time_date: {$gte:y,$lt: x}})
-    results = db.air_datas.find().sort("time_date")
+    results = db.air_datas.find().sort("time_date",pymongo.DESCENDING)
     #for record in results:
         #print(record['co'])
     print(results)
-    return "sa"
+    return results
     #return "hello"
    
 @app.route('/val/<co>/<dust>',methods = ['GET'])
