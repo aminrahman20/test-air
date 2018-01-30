@@ -24,7 +24,7 @@ def time():
     #for record in results:
         #print(record['co'])
     
-    return "{'co':"+results[0]['co']+",'du':"results[0]['dust']+"}"
+    return "{'co':"+results[0]['co']+",'du':"+results[0]['dust']+"}"
     
    
 @app.route('/val/<co>/<dust>',methods = ['GET'])
