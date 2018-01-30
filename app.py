@@ -24,9 +24,8 @@ def time():
     #for record in results:
         #print(record['co'])
     
-    print(results[0]['co'])
-    #return results
-    return "hello"
+    return results[0])
+    
    
 @app.route('/val/<co>/<dust>',methods = ['GET'])
 def val(co=None,dust=None):
