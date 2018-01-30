@@ -1,11 +1,12 @@
 import os
 from flask import Flask
 from flask import request
+from flask_cors import CORS
 from pymongo import MongoClient
 from datetime import datetime
 #import datetime
 app = Flask(__name__)
-
+CORS(app)
 #test
 
 #print(air_date)
