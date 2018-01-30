@@ -23,9 +23,8 @@ def time():
     results = db.air_datas.find().sort("time_date" , -1)
     #for record in results:
         #print(record['co'])
- 
-   
-    return (results['co'])
+    print(results['co'])
+    return "sa"
     #return "hello"
    
 @app.route('/val/<co>/<dust>',methods = ['GET'])
