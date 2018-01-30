@@ -20,7 +20,7 @@ def time():
     #x=datetime.datetime.now()
     #y=datetime.datetime.now() - datetime.timedelta(minutes=20)
     #db.air_datas.find({time_date: {$gte:y,$lt: x}})
-    results = db.air_datas.find().sort("time_date" , -1)
+    results = db.air_datas.find().sort("time_date")
     #for record in results:
         #print(record['co'])
     print(results['co'])
