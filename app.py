@@ -23,7 +23,8 @@ def time():
     results = db.air_datas.find().sort("time_date",-1)
     #for record in results:
         #print(record['co'])
-    print(results)
+    for d in results:
+        print(d)
     #return results
     return "hello"
    
