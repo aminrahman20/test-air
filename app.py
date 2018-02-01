@@ -4,7 +4,7 @@ from flask import request
 from flask_cors import CORS
 from pymongo import MongoClient
 from datetime import datetime
-from time import gmtime
+
 #import datetime
 app = Flask(__name__)
 CORS(app)
@@ -39,7 +39,7 @@ def time():
     #return time_date+" "+co+" "+dust
 @app.route('/val/<co>',methods = ['GET'])
 def val(co=None):
-    time_date=datetime.now().strftime('%Y-%m-%d %H:%M:%S +0000', gmtime())
+    time_date=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     print(time_date+" "+co)	
     db.air_datas.insert_one({'time_date':time_date,'co': co})
     return time_date+" "+co
