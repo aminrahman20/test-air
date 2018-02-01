@@ -39,7 +39,7 @@ def time():
     #return time_date+" "+co+" "+dust
 @app.route('/val/<co>',methods = ['GET'])
 def val(co=None):
-    time_date=datetime.now() + datetime.timedelta(hours=6)  
+    time_date=datetime.now() + timedelta(hours=6)  
     time_date = time_date.strftime('%Y-%m-%d %H:%M:%S')
     print(time_date+" "+co)	
     db.air_datas.insert_one({'time_date':time_date,'co': co})
