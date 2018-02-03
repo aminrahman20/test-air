@@ -29,7 +29,7 @@ def time():
     #json_data = json.loads(results)
     #return results[0]['co']
     #return json_data
-    type(results)
+    return type(results)
    
 #@app.route('/val/<co>/<dust>',methods = ['GET'])
 #def val(co=None,dust=None):
