@@ -26,7 +26,7 @@ def time():
     results = request.json(db.air_datas.find().sort("time_date",-1))
     #for record in results:
         #print(record['co'])
-    #results = str(results)
+    results = str(results)
     return results
     #json_data = json.loads(results)
     #return results[0]['co']
