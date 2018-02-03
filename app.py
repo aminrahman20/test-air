@@ -23,12 +23,13 @@ def time():
     #x=datetime.datetime.now()
     #y=datetime.datetime.now() - datetime.timedelta(minutes=20)
     #db.air_datas.find({time_date: {$gte:y,$lt: x}})
-    results = db.air_datas.find().sort("time_date",-1)
+    results = request.json(db.air_datas.find().sort("time_date",-1))
     #for record in results:
         #print(record['co'])
     #results = str(results)
+    return results
     #json_data = json.loads(results)
-    return results[0]['co']
+    #return results[0]['co']
     #return json_data
     #return type(results)
    
