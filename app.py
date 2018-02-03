@@ -26,9 +26,10 @@ def time():
     results = db.air_datas.find().sort("time_date",-1)
     #for record in results:
         #print(record['co'])
-    #json_data = json.loads(results)
-    return results[0]['co']
-    #return json_data
+    results = str(results)
+    json_data = json.loads(results)
+    #return results[0]['co']
+    return json_data
     #return type(results)
    
 #@app.route('/val/<co>/<dust>',methods = ['GET'])
