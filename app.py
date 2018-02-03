@@ -5,6 +5,7 @@ from flask_cors import CORS
 from pymongo import MongoClient
 from datetime import datetime
 from datetime import timedelta
+import json
 #import datetime
 app = Flask(__name__)
 CORS(app)
@@ -25,9 +26,9 @@ def time():
     results = db.air_datas.find().sort("time_date",-1)
     #for record in results:
         #print(record['co'])
-    
-    return results[0]['co']
-    
+    json_data = json.loads(results)
+    #return results[0]['co']
+    return json_data
    
 #@app.route('/val/<co>/<dust>',methods = ['GET'])
 #def val(co=None,dust=None):
