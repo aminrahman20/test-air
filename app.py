@@ -20,7 +20,7 @@ def hello_world():
 @app.route('/time',methods = ['GET'])
 def time():
     results = db.air_datas.find().sort("time_date",-1)
-    return results[0]['co']
+    #return results[0]['co']
     #x=datetime.datetime.now()
     #y=datetime.datetime.now() - datetime.timedelta(minutes=20)
     #db.air_datas.find({time_date: {$gte:y,$lt: x}})
@@ -34,7 +34,7 @@ def time():
     #json_data = json.loads(results)
     
     #return json_data
-    #return type(results)
+    return type(results)
    
 #@app.route('/val/<co>/<dust>',methods = ['GET'])
 #def val(co=None,dust=None):
