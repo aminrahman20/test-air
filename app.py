@@ -53,9 +53,9 @@ def val(co=None):
     time_date = time_date.strftime('%Y-%m-%d %H:%M:%S')
     print(time_date+" "+co)	
     #db.air_datas.insert_one({'time_date':time_date,'co': co,'location': 'shamoli'})
-    db.air_datas_shamoli.insert_one({'time_date':time_date,'co': co,'location': 'shamoli'})
-    #db.air_datas_farmgate.insert_one({'time_date':time_date,'co': co,'location': 'farmgate'})
     #db.air_datas_shamoli.insert_one({'time_date':time_date,'co': co,'location': 'shamoli'})
+    db.air_datas_farmgate.insert_one({'time_date':time_date,'co': co,'location': 'farmgate'})
+    #db.air_datas_indoor.insert_one({'time_date':time_date,'co': co,'location': 'indoor'})
     return time_date+" "+co
 
 if __name__ == '__main__':
