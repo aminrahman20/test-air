@@ -19,8 +19,8 @@ def hello_world():
     return 'Hello World'
 @app.route('/time',methods = ['GET'])
 def time():
-    results = db.air_datas_farmgate.find().sort("time_date",-1)
-    #results = db.air_datas_indoor.find().sort("time_date",-1)
+    #results = db.air_datas_farmgate.find().sort("time_date",-1)
+    results = db.air_datas_indoor.find().sort("time_date",-1)
     #results = db.air_datas_shamoli.find().sort("time_date",-1)
     #results = db.air_datas_farmgate.find().sort("time_date",-1)
     return results[0]['co']
@@ -54,8 +54,8 @@ def val(co=None):
     print(time_date+" "+co)	
     #db.air_datas.insert_one({'time_date':time_date,'co': co,'location': 'shamoli'})
     #db.air_datas_shamoli.insert_one({'time_date':time_date,'co': co,'location': 'shamoli'})
-    db.air_datas_farmgate.insert_one({'time_date':time_date,'co': co,'location': 'farmgate'})
-    #db.air_datas_indoor.insert_one({'time_date':time_date,'co': co,'location': 'indoor'})
+    #db.air_datas_farmgate.insert_one({'time_date':time_date,'co': co,'location': 'farmgate'})
+    db.air_datas_indoor.insert_one({'time_date':time_date,'co': co,'location': 'indoor'})
     return time_date+" "+co
 
 if __name__ == '__main__':
