@@ -23,6 +23,7 @@ def time():
     results = db.air_datas_indoor.find().sort("time_date",-1)
     #results = db.air_datas_shamoli.find().sort("time_date",-1)
     #results = db.air_datas_farmgate.find().sort("time_date",-1)
+    
     return results[0]['co']
     #x=datetime.datetime.now()
     #y=datetime.datetime.now() - datetime.timedelta(minutes=20)
